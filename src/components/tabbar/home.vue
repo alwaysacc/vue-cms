@@ -4,7 +4,6 @@
   <mt-swipe :auto="4000">
     <mt-swipe-item v-for="item in lunbotulist" :key="item.index"><img :src="item.img"/></mt-swipe-item>
   </mt-swipe>
-
   <ul class="mui-table-view mui-grid-view mui-grid-9">
     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/newslist">
       <img src="../../images/menu1(1).png"/>
@@ -41,7 +40,7 @@ export default {
   },
   methods:{
     getLunbotu(){
-      this.$http.get("http://47.89.21.179:8080/api/getlunbo").then(result=>{
+      this.$http.get("api/getlunbo").then(result=>{
         console.log(result.body)
         if (result.body.status===0){
           this.lunbotulist = result.body.message
